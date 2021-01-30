@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './nprogress.css';
+import GlobalStyle from './global-styles'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Character from './character'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <Router>
+        <Switch>
+          <Route path={`${process.env.PUBLIC_URL}/`} exact component={Character} />
+          <Route path={`${process.env.PUBLIC_URL}/:id`} exact component={Character} />
+        </Switch>
+      </Router>
     </div>
   );
 }
