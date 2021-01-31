@@ -1,4 +1,4 @@
-# Covid 19 - Challenge 
+# Rick and Morty
 
 Building this app with intention of learning React 
 
